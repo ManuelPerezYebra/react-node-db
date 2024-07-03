@@ -17,7 +17,7 @@ tasksController.createTask = async (req, res) => {
   try {
     const newTask = new TaskModel({
       _id: v4(),
-      task: req.body.task,
+      name: req.body.name,
       completed: false
     });
     await newTask.save();
