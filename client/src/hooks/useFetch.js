@@ -6,23 +6,20 @@ export const useFetch = url => {
 		loading: true,
 		error: null
 	});
-
 	useEffect(() => {
 		fetchDataCustom(url, setFetchStatus);
 	}, [url]);
-
 	return { ...fetchStatus };
 };
 
 const fetchDataCustom = async (url, setFetchStatus) => {
 	try {
 		const response = await fetch(url);
+
 		if (!response.ok) {
-			throw new Error('Error ' + response.status);
+			throw new Error('Error' + response.status);
 		}
-
 		const data = await response.json();
-
 		setFetchStatus({ data, loading: false });
 	} catch (error) {
 		setFetchStatus({ loading: false, error });

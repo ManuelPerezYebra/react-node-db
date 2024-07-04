@@ -1,4 +1,4 @@
-import Users from './components/Users/Users';
+import Users from './constants/users/Users';
 import { GlobalStyles } from './styles/GlobalStyles';
 
 const App = () => {
